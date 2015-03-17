@@ -1,3 +1,4 @@
+package figuras;
 
 public class Retangulo {
 	private int x;
@@ -19,6 +20,26 @@ public class Retangulo {
 	public String imprime(){
 		return "Retangulo [x:" + this.x + " y:" + this.y + " largura:" + this.largura + " altura:" + this.altura + "]";
 	}
+
+	public int getY() {
+		return y;
+	}
+
+	public void setY(int y) {
+		this.y = y;
+	}
+
+	public int getAltura() {
+		return altura;
+	}
+
+	public int getLargura() {
+		return largura;
+	}
+
+	public void setX(int x) {
+		this.x = x;
+	}	
 	
   }
 
