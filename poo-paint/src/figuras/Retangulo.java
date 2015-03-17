@@ -21,14 +21,13 @@ public class Retangulo {
 		return "Retangulo [x:" + this.x + " y:" + this.y + " largura:" + this.largura + " altura:" + this.altura + "]";
 	}
 
+	public int getX() {
+		return this.x;
+	}
+	
 	public int getY() {
-		return y;
+		return this.y;
 	}
-
-	public void setY(int y) {
-		this.y = y;
-	}
-
 	public int getAltura() {
 		return altura;
 	}
@@ -37,9 +36,15 @@ public class Retangulo {
 		return largura;
 	}
 
-	public void setX(int x) {
-		this.x = x;
-	}	
+	public void setX(int valor){
+		this.x = valor;
+	}
+	public void setY(int valor){
+		this.y = valor;
+	
+	}
+
+
 	
   }
 
