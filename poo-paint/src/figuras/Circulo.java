@@ -1,24 +1,26 @@
 package figuras;
 
-public class Circulo extends Figura{
-	
-	private int diametro;
+import java.awt.Graphics;
 
-	public Circulo(int x, int y, int diametro) {
+public class Circulo extends Figura {
+
+	private int raio = 0;
+
+	public Circulo(int x, int y, int raio) {
 		super(x, y);
-		this.diametro = diametro;
+		this.raio = raio;
 	}
 
 	public String imprime() {
-		return "Circulo [x:" + this.x + " y:" + this.y + " diametro:" + this.diametro + "]";
+		return "circulo[X:"+this.x+",Y:"+this.y+",raio:"+this.raio+"]";
 	}
 
-	public int getdiametro() {
-		return diametro;
+	public int getRaio() {
+		return raio;
 	}
 
-	public void setdiametro() {
-
+	@Override
+	public void desenha(Graphics g) {
+		g.drawOval(x, y, raio * 2, raio * 2);
 	}
-
 }
