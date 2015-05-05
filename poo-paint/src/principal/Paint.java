@@ -19,6 +19,9 @@ public class Paint extends JFrame {
 		
 		Figura[] figuras = new Figura[]{ret1, ret2, c};
 		AreaDeDesenho areaDeDesenho = new AreaDeDesenho(figuras);
+		GerenciadorDeEventos g = new GerenciadorDeEventos();
+		areaDeDesenho.addMouseListener(g);
+		
 		this.setContentPane(areaDeDesenho);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.pack();
