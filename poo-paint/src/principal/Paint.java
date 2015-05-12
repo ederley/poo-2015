@@ -13,14 +13,16 @@ public class Paint extends JFrame {
 	}
 
 	public Paint() {
-		Retangulo ret1 = new Retangulo(5, 5, 100, 80);
+		Retangulo ret1 = new Retangulo(5,5, 100, 80);
 		Retangulo ret2 = new Retangulo(400, 150, 30, 30);
+		
 		Circulo c = new Circulo(200, 200, 56);
 		
 		Figura[] figuras = new Figura[]{ret1, ret2, c};
 		AreaDeDesenho areaDeDesenho = new AreaDeDesenho(figuras);
-		GerenciadorDeEventos g = new GerenciadorDeEventos();
-		areaDeDesenho.addMouseListener(g);
+		
+		//GerenciadorDeEventos g = new GerenciadorDeEventos();
+		//areaDeDesenho.addMouseListener(g);
 		
 		this.setContentPane(areaDeDesenho);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
