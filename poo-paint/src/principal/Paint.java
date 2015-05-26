@@ -1,6 +1,12 @@
 package principal;
 
+import java.awt.BorderLayout;
+
+import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JToggleButton;
+import javax.swing.JToolBar;
 
 import figuras.Circulo;
 import figuras.Figura;
@@ -11,20 +17,40 @@ public class Paint extends JFrame {
 	public static void main(String[] args) {
 		Paint aplicacao = new Paint();
 	}
+	
+	
 
 	public Paint() {
-		Retangulo ret1 = new Retangulo(5,5, 100, 80);
-		Retangulo ret2 = new Retangulo(400, 150, 30, 30);
+	
 		
-		Circulo c = new Circulo(200, 200, 56);
+		JPanel painelPrincipal = new JPanel();
+		painelPrincipal.setLayout(new BorderLayout());
+		JToolBar barraDeFerramentas = new JToolBar("Barra de Ferramentas");
+		barraDeFerramentas.setFloatable(true);
+		painelPrincipal.add(barraDeFerramentas, BorderLayout.PAGE_START);
+		ButtonGroup grupoDeBotoes = new ButtonGroup();
+		JToggleButton botaoRetangulo = new JToggleButton("Retângulo");
 		
-		Figura[] figuras = new Figura[]{ret1, ret2, c};
-		AreaDeDesenho areaDeDesenho = new AreaDeDesenho(figuras);
 		
-		GerenciadorDeEventos g = new GerenciadorDeEventos(areaDeDesenho);
+		
+		
+		//botaoRetangulo.addActionListener(/* Aqui vem um ActionListener */);
+		botaoRetangulo.getModel().setPressed(true);
+		grupoDeBotoes.add(botaoRetangulo);
+		barraDeFerramentas.add(botaoRetangulo);
+		
+		JToggleButton botaoCirculo = new JToggleButton("Circulo");
+		grupoDeBotoes.add(botaoCirculo);
+		barraDeFerramentas.add(botaoCirculo);
+		
+		
+		AreaDeDesenho areaDeDesenho = new AreaDeDesenho();
+		painelPrincipal.add(areaDeDesenho, BorderLayout.CENTER);
+		
+		GerenciadorDeEventos g = new GerenciadorDeEventos(areaDeDesenho, botaoRetangulo, botaoCirculo);
 		areaDeDesenho.addMouseListener(g);
 		
-		this.setContentPane(areaDeDesenho);
+		this.setContentPane(painelPrincipal);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.pack();
 		this.setVisible(true);

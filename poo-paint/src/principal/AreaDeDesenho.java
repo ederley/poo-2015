@@ -13,10 +13,8 @@ public class AreaDeDesenho extends JPanel {
 
 	private List<Figura> figuras = new ArrayList<Figura>();
 	
-	public AreaDeDesenho(Figura[] figuras) {
-		for (Figura f : figuras) {
-			this.figuras.add(f);
-		}
+	public AreaDeDesenho() {
+		
 		this.setPreferredSize(new Dimension(600, 400));
 	}
 
