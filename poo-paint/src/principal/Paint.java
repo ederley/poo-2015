@@ -49,6 +49,7 @@ public class Paint extends JFrame {
 		
 		GerenciadorDeEventos g = new GerenciadorDeEventos(areaDeDesenho, botaoRetangulo, botaoCirculo);
 		areaDeDesenho.addMouseListener(g);
+		areaDeDesenho.addMouseMotionListener(g);
 		
 		this.setContentPane(painelPrincipal);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
